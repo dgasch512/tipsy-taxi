@@ -1,13 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+// import Dashboard from './components/Dashboard';
+import Blog from './components/Blog';
+import { stories } from './stories';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-
-      </header>
+      <div>
+        <Blog stories={ stories }/>
+      </div>
     </div>
   );
 }

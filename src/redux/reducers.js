@@ -1,0 +1,51 @@
+import { combineReducers } from 'redux';
+import { 
+  REQUEST_RIDE,
+  REMOVE_REQUEST,
+  ADD_ARTICLE,
+  REMOVE_ARTICLE,
+  REQUEST_LOCATION_PENDING,
+  REQUEST_LOCATION_SUCCESS,
+  REQUEST_LOCATION_FAILED
+   } from './constants.js';
+
+   const rides = (state= [], action) => {
+     switch(action.type) {
+       case REQUEST_RIDE:
+         return [...state, action.value]
+        case REMOVE_REQUEST:
+          const rides = [ ...state ]
+          rides.splice(action.value, 1)
+          return rides
+        default: 
+          return state
+     }
+   }
+
+   const stories = (state= [], action) => {
+    switch(action.type) {
+      case ADD_ARTICLE:
+        return [...state, action.value]
+       case REMOVE_ARTICLE:
+         const stories = [ ...state ]
+         stories.splice(action.value, 1)
+         return stories
+       default: 
+         return state
+    }
+  }
+
+  const requestLocation = (state=[], action) => {
+    switch(action.type) {
+      case REQUEST_LOCATION_PENDING:
+        return Object.assign({}, state, { isPending: true });
+      case REQUEST_LOCATION_SUCCESS:
+        return Object.assign({}, state, { location: action.payload, isPending: false });
+      case REQUEST_LOCATION_FAILED:
+        return Object.assign({}, state, { error: action.payload, isPending: false });
+      default: 
+        return state;
+    }
+  }
+
+  export default combineReducers({ rides, stories, requestLocation });

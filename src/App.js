@@ -1,17 +1,21 @@
 import React from 'react';
 import './App.css';
 // import Dashboard from './components/Dashboard';
-import Blog from './components/Blog';
-import { stories } from './stories';
+import Navigation from './components/Navigation';
+import Router from './Router';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 
 function App() {
   return (
-    <div className="App">
-      <div>
-        <Blog stories={ stories }/>
-      </div>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Navigation />
+        <Router />
+      </BrowserRouter>
+    </Provider>
   );
 }
 

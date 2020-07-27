@@ -1,6 +1,5 @@
 import React from 'react';
-import MoreDet from './moreDet';
-import './index.css'
+import '../../index.css'
 
 class List extends React.Component {
   constructor(props) {
@@ -47,7 +46,7 @@ class List extends React.Component {
                   <div class="media">
                       <img src={contact.picture.large} alt="No img"/>
                   </div >
-                    < MoreDet contact={contact}/>
+                    {/* < MoreDet contact={contact}/> */}
                 </div>
 
               )

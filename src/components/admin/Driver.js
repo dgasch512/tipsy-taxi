@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import List from './List';
 
-class Driver extends React {
+class Driver extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isActive = false
+      isActive: false
     }
   };
   
 
-  Render () {
+  render () {
     return (
         <div className='outside'>
           <div>

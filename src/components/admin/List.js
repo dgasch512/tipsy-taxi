@@ -35,15 +35,15 @@ class List extends React.Component {
 
       console.log(this.state.contacts);
         return (
-          <div class="body">
+          <div className="body">
             <h2>My Peoples</h2>
-            <div class="container">
+            <div className="container">
             {this.state.contacts.map((contact, index) => {
                return (
               
-                <div class="card" key={contact.email}>
+                <div className="card" key={contact.email}>
                   <h3>{contact.name.first} {contact.name.last} </h3>
-                  <div class="media">
+                  <div className="media">
                       <img src={contact.picture.large} alt="No img"/>
                   </div >
                     {/* < MoreDet contact={contact}/> */}

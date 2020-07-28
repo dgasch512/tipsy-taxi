@@ -1,0 +1,35 @@
+.app {
+  height: 100%;
+}
+
+
+
+.login-form {
+  margin: 30px 20px;
+  height: auto;
+  width: 40%;
+  padding: 10px;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-around;
+}
+
+.loginCont {
+  display: flex;
+  justify-content: center;
+}
+
+.loginPap {
+  margin:40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.form-input {
+  margin: 15px;
+  margin-right: 100px;
+  color: red;
+}

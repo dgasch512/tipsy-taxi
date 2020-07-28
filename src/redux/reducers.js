@@ -9,6 +9,15 @@ import {
   REQUEST_LOCATION_FAILED
    } from './constants.js';
 
+   const user = (state = [], action ) => {
+    switch(action.type) {
+        case 'NEW_USER':
+            return state = action.value;
+        default:
+            return state
+    }
+}
+
    const rides = (state= [], action) => {
      switch(action.type) {
        case REQUEST_RIDE:
@@ -48,4 +57,4 @@ import {
     }
   }
 
-  export default combineReducers({ rides, stories, requestLocation });
+  export default combineReducers({ rides, stories, user, requestLocation });

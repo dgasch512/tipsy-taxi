@@ -4,10 +4,12 @@ import checkAuth from './checkAuth';
 import Dashboard from './components/Dashboard';
 import Request from './containers/request';
 import About from './components/About';
-import Blog from './components/Blog';
-import Login from './components/Login';
+import Blog from './containers/blog';
+import Login from './containers/login';
 import Driver from './components/admin/Driver';
 import Admin from './components/admin/Admin';
+
+
 
 const ProtectedRoute = ({ component: Component, ...rest}) => {
   return(

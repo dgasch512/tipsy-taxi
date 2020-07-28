@@ -48,7 +48,7 @@ class Navigation extends Component  {
                             <li className="nav-list-item"
                               onClick={() => {
                               document.cookie = "loggedIn="
-                              window.location.replace("/login")
+                              window.location.replace("/")
                               this.props.logOut()
                             }}>
                             Logout

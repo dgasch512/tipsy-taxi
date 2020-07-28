@@ -3,7 +3,7 @@ export default {
   user: {
       username: 'test-user-1',
   },
-  isRequested: false,
+  // isRequested: 'false',
   rides: [
     {
       "id": 1,

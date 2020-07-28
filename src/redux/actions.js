@@ -3,6 +3,7 @@ import {
   REMOVE_REQUEST,
   ADD_ARTICLE,
   REMOVE_ARTICLE,
+  NEW_USER,
   REQUEST_LOCATION_PENDING,
   REQUEST_LOCATION_SUCCESS,
   REQUEST_LOCATION_FAILED
@@ -27,6 +28,13 @@ import {
     type: REMOVE_ARTICLE,
     payload: index
   })
+
+  export const newUser = (user) => {
+    return {
+        type: NEW_USER,
+        value: user
+    }
+}
 
   export const requestLocation = () => (dispatch) => {
     dispatch({ type: REQUEST_LOCATION_PENDING});

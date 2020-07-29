@@ -8,7 +8,6 @@ import {
 import '../styles/login.css';
 
 
-
 class Login extends Component {
   state = {
     username: '',
@@ -32,36 +31,40 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="App" >
+      <div className="app" >
         <Paper elevation={3} className="loginPap">
-          <h1>Helloooo</h1>
-          <h3>This is a page</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, repellat autem! Corporis quod quam, blanditiis fugit voluptatibus atque earum beatae non consequuntur magnam sit ducimus, at a tenetur, ratione voluptate?</p>
+          <h2>Admin Login</h2>
+          <p>If you're looking for a ride, go back!</p>
           <Container className="loginCont">
-          <form className="login-form" onSubmit={this.login}>
-            <TextField
-              required
-              className='form-input'
-              variant="filled"
-              onChange={this.handleTextChange}
-              value={this.state.username}
-              name="username"
-              label="Username"
-              type="text" />
-            <TextField
-              required
-              className='form-input'
-              variant="filled"
-              onChange={this.handleTextChange}
-              value={this.state.password}
-              name="password"
-              label="Password"
-              type="password" />
-            <Button
-              type="submit"
-              className="login-button"
-              variant="contained">Login</Button>
-          </form>
+            <form className="login-form" onSubmit={this.login}>
+              <div className="form-input">
+              <TextField
+                marginRight=""
+                required
+                variant="filled"
+                onChange={this.handleTextChange}
+                value={this.state.username}
+                name="username"
+                label="Username"
+                type="text" />
+                </div>
+                <br />
+                <div className='form-input'>
+                  <TextField
+                  required
+                  variant="filled"
+                  onChange={this.handleTextChange}
+                  value={this.state.password}
+                  name="password"
+                  label="Password"
+                  type="password" />
+                </div>
+                <br />
+              <Button
+                type="submit"
+                className="login-button"
+                variant="contained">Login</Button>
+            </form>
         </Container>
           
         </Paper>

@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import {
   Paper,
   TextField,
-  Button,
-  Container
+  Button
 } from '@material-ui/core';
 import '../styles/login.css';
 
@@ -33,9 +32,13 @@ class Login extends Component {
     return (
       <div className="app" >
         <Paper elevation={3} className="loginPap">
-          <h2>Admin Login</h2>
-          <p>If you're looking for a ride, go back!</p>
-          <Container className="loginCont">
+
+          <div className="loginCont">
+            <div className='words'>
+              <h2>Admin Login</h2>
+              <p>If you're looking for a ride, go back!</p>             
+            </div>
+
             <form className="login-form" onSubmit={this.login}>
               <div className="form-input">
               <TextField
@@ -65,7 +68,7 @@ class Login extends Component {
                 className="login-button"
                 variant="contained">Login</Button>
             </form>
-        </Container>
+        </div>
           
         </Paper>
       </div>

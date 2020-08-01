@@ -7,7 +7,7 @@ const Story = ({ id, name, image, article }) => {
 
   return (
     // Return only one thing
-    <div className='app'>   
+    <div className='cover'>   
       <Paper elevation={3} className='paper'>
         <article className='article'>
           <Grid container spacing={3} center className='artGrid'>

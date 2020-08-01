@@ -1,5 +1,10 @@
 import React from 'react';
 import Card from './Card';
+import axios from 'axios';
+
+const test = () => {
+  axios.get('/test').then(res => console.log(res))
+}
 
 const Dashboard = () => {
   console.log('working')
@@ -14,7 +19,7 @@ const Dashboard = () => {
         <button>Get a Ride</button>
         <p>Don't worry - Tipsy Taxi is a free service. We don't ask for your payment information or any personal information not necessary to provide you a safe way home. Let's make the roads safer together!</p>
         <p>Call or text (575)964-0000</p>
-
+        <button onClick={test}>Test Server</button>
       </div>
           {/* // Cards for other pages or resources */}
       <div>

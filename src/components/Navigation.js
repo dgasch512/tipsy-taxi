@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { AppBar, Toolbar, IconButton, 
-    Typography } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 import checkAuth from '../checkAuth';
+import '../styles/navigation.css';
 
 
 class Navigation extends Component  {
@@ -15,37 +13,35 @@ class Navigation extends Component  {
 
     render() {
         return (
-            <AppBar position="relative">
-                <Toolbar>
-                    <IconButton color="inherit">
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" style={{ flexGrow: "1" }}>
-                        Tipsy Taxi
-                    </Typography>
-                    <ul className="nav-list">
+          <nav className='nav' style={{display: 'flex', justifyContent: 'space-between', position: 'relative'}}>
+            {/* <p className='f3 link dim black underline pa3 pointer'>Sign Out</p> */}
+            <div className='icon'>
+             <h4 style={{ flexGrow: "1" }}>TIPSY<span className='taxi'>TAXI</span></h4> 
+            </div>
+            <div>
+            <ul className="nav-list">
                         <li className="nav-list-item">
-                          <Link to="/">Home</Link>
+                          <Link className='links' to="/">Home</Link>
                         </li>
                         <li className="nav-list-item">
-                          <Link to="/about">About</Link>
+                          <Link className='links' to="/about">About</Link>
                         </li>
                         <li className="nav-list-item">
-                          <Link to="/blog">Blog</Link>
+                          <Link className='links' to="/blog">Blog</Link>
                         </li>
                         {checkAuth() && (
                         <li className="nav-list-item">
-                          <Link to="/driver">Driver Portal</Link>
+                          <Link className='links' to="/driver">Driver Portal</Link>
                         </li> 
                         )}
                         {checkAuth() && (
                         <li className="nav-list-item">
-                          <Link to="/admin">Admin</Link>
+                          <Link className='links' to="/admin">Admin</Link>
                         </li> 
                         )}
                         
                         {checkAuth() ? (
-                            <li className="nav-list-item"
+                            <li className="nav-list-item links"
                               onClick={() => {
                               document.cookie = "loggedIn="
                               window.location.replace("/")
@@ -55,13 +51,15 @@ class Navigation extends Component  {
                         </li>
                     ) : (
                         <li className="nav-list-item">
-                        <Link to="/login">Admin</Link>
+                        <Link className='links' to="/login">Admin</Link>
                     </li>
                     )}
 
                     </ul>
-                </Toolbar>
-            </AppBar>
+            </div>
+          </nav>
+
+           
         )
     }
 }

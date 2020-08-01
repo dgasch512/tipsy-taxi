@@ -5,7 +5,7 @@ import '../styles/blog.css'
 const Blog = ({ stories }) => {
   const storyComponent = stories.map((user, i) => {
     return (
-      <div className='app'>
+      <div className='cover'>
         <Story 
         key={i} 
         id={stories[i].id} 

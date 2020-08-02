@@ -16,11 +16,11 @@ export default {
     },
     {
       "id": 2,
-      "first-name": "Kelly",
-      "last-name": "Ford",
+      "firstname": "Kelly",
+      "lastname": "Ford",
       "phone": "575-692-0897",
-      "pickup-location": "Jalisco's Restaurant in Hobbs",
-      "dropoff-location": "2000 Baja Rd., Hobbs NM 88240",
+      "pickupLocation": "Jalisco's Restaurant in Hobbs",
+      "dropoffLocation": "2000 Baja Rd., Hobbs NM 88240",
       "comments": "Call me and I will come outside please. It's cold!!!"
     }
   ],
@@ -48,6 +48,24 @@ export default {
       name: 'Title of the fourth article',
       image: 'https://images.unsplash.com/photo-1595693396174-619c6ac551b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
       article: 'lo;gogo nskjhfbl  eilubvilug sb;uu ;uh;oub;ubbhb lyvvykuc ktyfkutf kuyfkuyfkuyf uyfkyuf kyufkuyfvkytdrdyrsr su yflyflygfligkuyfutdktf jl fyulfkud kutdkutdluylvjhlf lyuf luyflutfuf luyfluyfluyf lufluyf luyf y flyuf lyufluyf lyuflyuhjvmhgdktfljhligliuhgliubliugliugliyfliyug. lo;gogo nskjhfbl  eilubvilug sb;uu ;uh;oub;ubbhb lyvvykuc ktyfkutf kuyfkuyfkuyf uyfkyuf kyufkuyfvkytdrdyrsr su yflyflygfligkuyfutdktf jl fyulfkud kutdkutdluylvjhlf lyuf luyflutfuf luyfluyfluyf lufluyf luyf y flyuf lyufluyf lyuflyuhjvmhgdktfljhligliuhgliubliugliugliyfliyug.'
+    }
+  ],
+  drivers: [
+    {
+      id: 1,
+      name: 'David Gasch',
+      username: 'd.gasch512',
+      password: 'playingGoFishWithGrandma4',
+      totalRides: 16, 
+      isManager: true
+    },
+    {
+      id: 2,
+      name: 'DJ Jazzy Jax',
+      username: 'Best_Dog_Ever',
+      password: 'imCuteaf21',
+      totalRides: 32,
+      isManager: false
     }
   ]
 

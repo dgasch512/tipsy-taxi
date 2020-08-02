@@ -22,7 +22,7 @@ class Login extends Component {
 
   login = (e) => {
     e.preventDefault()
-    document.cookie = "loggedIn=true;max-age=380*1000";
+    document.cookie = "loggedIn=true;max-age=1000*1000";
     window.location.replace("/driver")
     this.props.newUser( this.state.username )
   //  this.props.history.push("/listings")
@@ -35,8 +35,8 @@ class Login extends Component {
 
           <div className="loginCont">
             <div className='words'>
-              <h2>Admin Login</h2>
-              <p>If you're looking for a ride, go back!</p>             
+              <h2 className='adminLogin'>Admin Login</h2>
+              <p className='noRider'>If you're looking for a ride, go back!</p>             
             </div>
 
             <form className="login-form" onSubmit={this.login}>

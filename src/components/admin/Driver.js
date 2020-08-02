@@ -1,31 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
 import List from './List';
+import '../../styles/driver.css';
 
-class Driver extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isActive: false
-    }
-  };
-  
-
-  render () {
+const Driver = ({ rides }) => {
+  const ridesComponent = rides.map((rider, i) => {
     return (
-        <div className='outside'>
-          <div>
-            <h1>Assigned Riders</h1>
-            <h4>Driver Name</h4>
-            <h4>Date</h4>
-            <h4>Total:    Active:     Completed:</h4>
-            <button>Start Driving</button>
-          </div>
-          <div>
-            <List />
-          </div>
-        </div>   
+      <div className='cover2'>
+        <div>
+          <List 
+          key={i}
+          id={rider.id} 
+          firstname={rider.firstname} 
+          lastname={rider.lastname} 
+          phone={rider.phone} 
+          pickupLocation={rider.pickupLocation}
+          dropoffLocation={rider.dropoffLocation}
+          comments={rider.comments}
+          />
+        </div>
+      </div>
+
     )
-  }
+  })
+    return (
+      <div>
+        { ridesComponent }  
+      </div>
+    
+      )
 }
+
 
 export default Driver;

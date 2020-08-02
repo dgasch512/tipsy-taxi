@@ -6,8 +6,9 @@ import Request from './containers/request';
 import About from './components/About';
 import Blog from './containers/blog';
 import Login from './containers/login';
-import Driver from './components/admin/Driver';
+import Driver from './containers/driver';
 import Admin from './components/admin/Admin';
+import Ordered from './components/Ordered';
 
 
 
@@ -32,6 +33,7 @@ const Router = () => {
       <ProtectedRoute exact path="/admin" component={Admin} />
       <Route path="/about" component={About} />
       <Route path="/blog" component={Blog} />
+      <Route path="/submitted" component={Ordered} />
     </Switch>
   );
 };

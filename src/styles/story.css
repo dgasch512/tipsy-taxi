@@ -2,70 +2,76 @@
   background-color: rgba(0,0,0,1),0;
 }
 
-.paper {
-  margin: 40px;
-  padding: 20px;
+.article2 {
+  background-color: rgb(204, 201, 201);
+  padding: 2.5vw;
   height: auto;
-  color: light-grey;
+  font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+  width: 75vw;
+  border: 1px solid #222;
 }
 
 
 .artGrid {
   display: flex;
   /* flex-wrap: wrap; */
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+
+}
+
+.pieces {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
 }
 
 .headline {
-  display: inline-block;
+  display: flex;
+  margin: 20px 10px;
+  font-size: 2.6vw;
+  height: auto;
+}
+
+h2 {
+  margin: 0;
   text-align: center;
 }
 
+
+.imgDiv {
+ width: 80%;
+ display: flex;
+ align-items: center;
+ margin-bottom: 3vh;
+ border: 1px solid #222;
+}
+
 .blogPic {
-  width: auto;
-  max-height: 450px;
+  /* width: 100%; */
   display: flex;
-  position: relative;
-  object-fit: contain;
-  margin-left: auto;
-  margin-right: auto;
+  /* object-fit: contain; */
+  margin-left: 0;
+  margin-right: 0;
   /* width: 50%; */
 }
 
 .story {
+  display: flex;
+  align-items: center;
   justify-content: center;
+  text-align: center;
   padding: 0;
+  width: 100%;
 }
 
 p {
   font-size: 15px;
-  /* text-align: center; */
   margin: 0;
 }
 
 
-@media (min-width: 576px) {
-  .p {
-    font-size: 15px;
-    /* max-height: 200px;    */
-  }
- }
- 
- /* Medium and up (Tablets) */
- @media (min-width: 768px) {
-  .p {
-    font-size: 20px;
-    /* max-height: 200px;    */
-  }
- }
- 
- /* Large and up (Desktops) */
- @media (min-width: 992px) {
- 
- }
- 
- /* Extra Large and up (Wide Screen Desktops) */
- @media (min-width: 1200px) {
- 
- }
+
+

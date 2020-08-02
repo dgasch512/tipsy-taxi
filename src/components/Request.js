@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import {
-  Button,
-  TextField
-} from '@material-ui/core';
+// import Ordered from './Ordered';
+import '../styles/request.css';
+import { Link } from 'react-router-dom';
 
 class Request extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isBusiness: false,
       id: "",
       firstname: "",
       lastname: "",
@@ -16,7 +14,6 @@ class Request extends Component {
       pickupLocation: "",
       dropoffLocation: "",
       comments: "",
-      isShowing: true
     }
   };
 
@@ -32,120 +29,147 @@ class Request extends Component {
     newRider.id = this.props.rides.length;
     this.props.newRequest(newRider);
     this.setState({ isShowing: true });
-    window.alert("Ride request submitted. Thank you for choosing to call a designated driver!");
+    console.log('New Request Submitted')
   }
+
+
   
   render() {
     return (
-      <container className='addContent'>
-      <div className="addDiv">
-        <form onSubmit={this.handleSubmit}
-        style={{ display: 'flex', flexDirection: 'column', width: '40%'}}>
-          <TextField 
-            id='firstname'
-            placeholder='First Name'
-            value={this.state.firstname}
-            onChange={this.handleTextChange}
-            required /> 
-          <TextField 
-            id='lastname'
-            placeholder='Last Name'
-            value={this.state.lastname}
-            onChange={this.handleTextChange}
-            required /> 
-          <TextField 
-            id='phone'
-            placeholder='Phone Number'
-            value={this.state.phone}
-            onChange={this.handleTextChange}
-            required /> 
-          <TextField 
-            id='pickupLocation'
-            placeholder='Pickup Location'
-            value={this.state.pickupLocation}
-            onChange={this.handleTextChange}
-            required /> 
-          <TextField 
-            id='dropoffLocation'
-            placeholder='Drop-off Location'
-            value={this.state.dropoffLocation}
-            onChange={this.handleTextChange}
-            required /> 
-          <TextField 
-            id='comments'
-            placeholder='Please add any comments you have about this request'
-            value={this.state.comments}
-            onChange={this.handleTextChange}
-             /> 
-          <br />
-          <Button 
-            variant='contained' 
-            color='primary'
-            type='submit'
-            >SUBMIT</Button>
-        </form>
-      </div>
-    </container> 
-    )
+      <div className='addContent'>
+        <div className="addDiv">
+        <article className='br2 ba b--black-10 mv4 w-100 w-50-m w-25-1 shadow-5 mw7 center'>
+        <main className="pa4 black-80 w-50">
+          <div className="measure">
+            <fieldset
+              id="sign_up"
+              className="ba b--transparent ph0 mh0"
+            >
+              <legend className="f1 fw6 ph0 mh0 title">
+                Rider Details
+              </legend>
+              <div className="mt3">
+                <label
+                  className="db fw6 lh-copy f6 label"
+                  htmlFor="firstname"
+                >
+                  First Name
+                </label>
+              <input
+                className="pa2 input-reset ba  hover-bg-black hover-white w-70"
+                type="text"
+                name="firstname"
+                id="firstname"
+                value={this.state.firstname}
+                onChange={this.handleTextChange}
+                required
+              />
+              </div>
+              <div className="mt3">
+                <label
+                  className="db fw6 lh-copy f6 label"
+                  htmlFor="lastname"
+                >
+                  Last Name
+                </label>
+              <input
+                
+                className="pa2 input-reset ba hover-bg-black hover-white w-70"
+                type="text"
+                name="lastname"
+                id="lastname"
+                value={this.state.lastname}
+                onChange={this.handleTextChange}
+                required
+              />
+              </div>
+              <div className="mt3">
+                <label
+                  className="db fw6 lh-copy f6 label"
+                  htmlFor="phone"
+                >
+                  Phone Number
+                </label>
+              <input
+                className="pa2 input-reset ba hover-bg-black hover-white w-50"
+                type="text"
+                name="phone"
+                id="phone"
+                value={this.state.phone}
+                onChange={this.handleTextChange}
+                required
+              />
+              </div>
+              <div className="mt3">
+                <label
+                  className="db fw6 lh-copy f6 label"
+                  htmlFor="pickupLocation"
+                >
+                  Pickup Location
+                </label>
+              <input
+                className="pa2 input-reset ba hover-bg-black hover-white w-100"
+                type="text"
+                name="pickupLocation"
+                id="pickupLocation"
+                value={this.state.pickupLocation}
+                onChange={this.handleTextChange}
+                required
+              />
+              </div>
+              <div className="mt3">
+                <label
+                  className="db fw6 lh-copy f6 label"
+                  htmlFor="dropoffLocation"
+                >
+                  Dropoff Location
+                </label>
+              <input
+                className="pa2 input-reset ba hover-bg-black hover-white w-100 mb3"
+                type="text"
+                name="dropoffLocation"
+                id="dropoffLocation"
+                value={this.state.dropoffLocation}
+                onChange={this.handleTextChange}
+                required
+              />
+              </div>
+              <div>
+                <label
+                  className="db fw6 lh-copy f6 label"
+                  htmlFor="comments"
+                >
+                  Comments
+                </label>
+              <input
+                className="pa2 input-reset ba hover-bg-black hover-white w-100 mb2"
+                type="text"
+                name="comments"
+                id="comments"
+                value={this.state.comments}
+                onChange={this.handleTextChange}
+                required
+              />
+              </div>
+            </fieldset>
+            <div className="">
+              <button
+                className="b ph3 pv2 input-reset ba b--black grow pointer f6 dib"
+                type="submit"
+                // value="Request"
+                onClick={this.handleSubmit}
+                >
+                  <Link className='order' to="/submitted">Submit</Link>
+                </button>
+            </div>
+          </div>
+        </main>
+        </article>
+        </div>
+      </div> 
+
+    );
   }
 }
 
 export default Request;
-//   Render () {
-//     return (
-//       isBusiness ?! (
-//         <div className='outside'>
-//           <div>
-//             <form>
-//               <label>
-//                 Name:
-//                 <input type="text" name="name" />
-//                 Phone Number:
-//                 <input type="text" name="number" />
-//                 Pickup Address or Loacation:
-//                 <input type="text" name="pickup" />
-//                 Dropoff Address or Location:
-//                 <input type="text" name="dropoff" />
-//                 Number of riders:
-//                 <input type="text" name="dropoff" />
-//                 Comments:
-//                 <input type="text" name="dropoff" />
-//               </label>
-//               <input type="submit" value="Submit" />
-//             </form>          
-//           </div>
-//           <div>
-//             <p>If you are uncomfortable providing any of the answers above or wish to make special arrangements please call or text your driver when they reach out. Your safety is our main concern</p>
-//           </div>
-//         </div>
-//       ) : (
-//         <div className='outside'>
-//           <div>
-//             <form>
-//               <label>
-//                 Business Name:
-//                 <input type="text" name="name" />
-//                 Business Number:
-//                 <input type="text" name="name" />
-//                 Rider Name:
-//                 <input type="text" name="name" />
-//                 Rider phone number:
-//                 <input type="text" name="number" />
-//                 Pickup Address or Loacation:
-//                 <input type="text" name="pickup" />
-//                 Dropoff Address or Location:
-//                 <input type="text" name="dropoff" />
-//                 Comments:
-//                 <input type="text" name="dropoff" />
-//               </label>
-//               <input type="submit" value="Submit" />
-//             </form>          
-//           </div>
-//           <div>
-//             <p>If you are unable to provide any of the answers above or wish to make special arrangements please call or text the driver. Thank you for taking part in keeping our roads safe!</p>
-//           </div>
-//         </div>   
-//       )
-//     )
-//   }
-// 

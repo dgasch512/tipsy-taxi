@@ -1,0 +1,27 @@
+input {
+  background-color: white;
+}
+
+article {
+  background-color: rgba(50, 50, 50, .9);
+}
+
+.label {
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.title {
+  color: white;
+  font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+}
+
+.order {
+  color: #222;
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+}
+
+#comments {
+  height: 60px;
+}

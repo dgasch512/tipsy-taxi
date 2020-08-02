@@ -21,22 +21,22 @@ class Navigation extends Component  {
             <div>
             <ul className="nav-list">
                         <li className="nav-list-item">
-                          <Link className='links' to="/">Home</Link>
+                          <Link className='links' to="/">HOME</Link>
                         </li>
                         <li className="nav-list-item">
-                          <Link className='links' to="/about">About</Link>
+                          <Link className='links' to="/about">ABOUT</Link>
                         </li>
                         <li className="nav-list-item">
-                          <Link className='links' to="/blog">Blog</Link>
+                          <Link className='links' to="/blog">BLOG</Link>
                         </li>
                         {checkAuth() && (
                         <li className="nav-list-item">
-                          <Link className='links' to="/driver">Driver Portal</Link>
+                          <Link className='links' to="/driver">DRIVER PORTAL</Link>
                         </li> 
                         )}
                         {checkAuth() && (
                         <li className="nav-list-item">
-                          <Link className='links' to="/admin">Admin</Link>
+                          <Link className='links' to="/admin">ADMIN</Link>
                         </li> 
                         )}
                         
@@ -47,11 +47,11 @@ class Navigation extends Component  {
                               window.location.replace("/")
                               this.props.logOut()
                             }}>
-                            Logout
+                            LOGOUT
                         </li>
                     ) : (
                         <li className="nav-list-item">
-                        <Link className='links' to="/login">Admin</Link>
+                        <Link className='links' to="/login">ADMIN</Link>
                     </li>
                     )}
 

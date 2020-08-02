@@ -23,9 +23,9 @@ import {
        case REQUEST_RIDE:
          return [...state, action.value]
         case REMOVE_REQUEST:
-          const rides = [ ...state ]
-          rides.splice(action.value, 1)
-          return rides
+          const thisRide = [ ...state ]
+          thisRide.splice(action.payload, 1)
+          return {rides: [...state.rides, thisRide]}
         default: 
           return state
      }

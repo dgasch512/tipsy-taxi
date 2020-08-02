@@ -42,6 +42,7 @@
   height: auto;
   background-color: blanchedalmond;
   box-shadow: 1px 1px 3px #222;
+  padding: 20px 0;
 }
 
 .words {
@@ -51,6 +52,7 @@
   justify-content: center;
   width: 80%;
   font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+  color: black;
 }
 
 .login-form {
@@ -76,4 +78,20 @@
   .login-form {
     flex-direction: row;
   }
+}
+
+.adminLogin {
+  color: #222;
+  font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+  font-size: 5vw;
+  margin: 0 0 2vw 0;
+  text-emphasis: em;
+}
+
+.noRider {
+  color: #222;
+  font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+  font-size: 2vw;
+  text-shadow: 5px;
+  text-emphasis: em;
 }

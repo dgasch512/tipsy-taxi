@@ -1,33 +1,28 @@
 import React from 'react';
-import { Paper } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
 import '../styles/story.css';
 
 const Story = ({ id, name, image, article }) => {
 
   return (
     // Return only one thing
-    <div className='cover'>   
-      <Paper elevation={3} className='paper'>
-        <article className='article'>
-          <Grid container spacing={3} center className='artGrid'>
-            <Grid item xs={12} className='headline'>
-              <h1>{name}</h1>  
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <img className='blogPic' alt="this is a pic" src={image} />
-            </Grid>
-            <Grid item xs={12} sm={6} className='story'>
+    <div>   
+      <div className='paper'>
+        <article className='article2 shadow-5'>
+          <div className='artGrid'>
+            <div className='pieces'>
+              <div className='headline'>
+                <h2>{name}</h2> 
+              </div> 
+              <div className='imgDiv shadow-5'>
+                <img className='blogPic' alt="this is a pic" src={image} />
+              </div>
+            </div>
+            <div className='story'>
               <p>{article}</p>
-            </Grid>
-          </Grid> 
-          
-          
-          {/* <div className='blogWords'>
-            
-          </div> */}
+            </div>
+          </div> 
         </article>
-      </Paper>
+      </div>
     </div>
   )
 };

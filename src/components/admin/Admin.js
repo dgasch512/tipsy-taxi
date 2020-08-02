@@ -1,25 +1,33 @@
-import React from 'react';
+import React, {Component } from 'react';
 
 
-const Admin = () => {
-  console.log('working')
-  return (
-    <div className='outside'>
-      <div>
-        <h2>Request a ride!</h2>
+class Admin extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isActive: false
+    }
+  };
+  
+  buttonText = () => {
+    return this.state.isActive ? 'Stop Driving' : 'Start Driving';
+  }
+
+  render () {
+    return (
+      <div className='outside'>
+        <div className='article br2 ba b--black-10 mv5 w-300 w-100-m w-50-1 shadow-5 mw7 center'>
+          <h4>Welcome to the show</h4>
+          <p>You've had 20 rides this week!</p>
+
+      <button>{this.buttonText}</button>
+        </div>
+        <div className='nab'>
+
+        </div>
       </div>
-            {/* Request section. May be a component later */}
-            {/* If isRequested is false, button, if true, message or map */}
-      <div>
-        <button>Get a Ride</button>
-        <p>Don't worry - Tipsy Taxi is a free service. We don't ask for your payment information or any personal information not necessary to provide you a safe way home. Let's make the roads safer together!</p>
-        <p>Call or text (575)964-0000</p>
-
-      </div>
-          {/* // Cards for other pages or resources */}
-
-    </div>
-  )
+    )
+  }
 }
 
 export default Admin;

@@ -11,8 +11,8 @@ class Request extends Component {
       firstname: "",
       lastname: "",
       phone: "",
-      pickupLocation: "",
-      dropoffLocation: "",
+      pickuplocation: "",
+      dropofflocation: "",
       comments: "" 
       }
 
@@ -25,8 +25,8 @@ class Request extends Component {
         firstname: data.firstname,
         lastname: data.lastname,
         phone: data.phone,
-        pickupLocation: data.pickupLocation,
-        dropoffLocation: data.dropoffLocation,
+        pickuplocation: data.pickuplocation,
+        dropofflocation: data.dropofflocation,
         comments: data.comments,
         rideTime: data.rideTime
       }
@@ -51,11 +51,11 @@ class Request extends Component {
   };
 
   onPLChange = (event) => {
-    this.setState({ pickupLocation: event.target.value })
+    this.setState({ pickuplocation: event.target.value })
   };
 
   onDLChange = (event) => {
-    this.setState({ dropoffLocation: event.target.value })
+    this.setState({ dropofflocation: event.target.value })
   };
 
   onCommentsChange = (event) => {
@@ -70,8 +70,8 @@ class Request extends Component {
         firstname: this.state.firstname,
         lastname: this.state.lastname,
         phone: this.state.phone,
-        pickupLocation: this.state.pickupLocation,
-        dropoffLocation: this.state.dropoffLocation,
+        pickuplocation: this.state.pickuplocation,
+        dropofflocation: this.state.dropofflocation,
         comments: this.state.comments
       })
     })

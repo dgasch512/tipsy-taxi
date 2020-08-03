@@ -13,8 +13,8 @@ const Driver = ({ rides }) => {
           firstname={rider.firstname} 
           lastname={rider.lastname} 
           phone={rider.phone} 
-          pickupLocation={rider.pickupLocation}
-          dropoffLocation={rider.dropoffLocation}
+          pickuplocation={rider.pickuplocation}
+          dropofflocation={rider.dropofflocation}
           comments={rider.comments}
           />
         </div>

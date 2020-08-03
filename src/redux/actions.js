@@ -3,10 +3,10 @@ import {
   REMOVE_REQUEST,
   ADD_ARTICLE,
   REMOVE_ARTICLE,
-  NEW_USER,
-  REQUEST_LOCATION_PENDING,
-  REQUEST_LOCATION_SUCCESS,
-  REQUEST_LOCATION_FAILED
+  PROFILE
+  // REQUEST_LOCATION_PENDING,
+  // REQUEST_LOCATION_SUCCESS,
+  // REQUEST_LOCATION_FAILED
    } from './constants.js';
 
    export const newRequest = (rider) => ({
@@ -29,17 +29,17 @@ import {
     payload: index
   })
 
-  export const newUser = (user) => {
+  export const profile = (user) => {
     return {
-        type: NEW_USER,
+        type: PROFILE,
         value: user
     }
 }
 
-  export const requestLocation = () => (dispatch) => {
-    dispatch({ type: REQUEST_LOCATION_PENDING});
-    fetch('https://google.com')
-    .then(response => response.json())
-    .then(data => dispatch({ type: REQUEST_LOCATION_SUCCESS, payload: data }))
-    .catch(error => dispatch({ type: REQUEST_LOCATION_FAILED, payload: error }))
-  }
+  // export const requestLocation = () => (dispatch) => {
+  //   dispatch({ type: REQUEST_LOCATION_PENDING});
+  //   fetch('https://google.com')
+  //   .then(response => response.json())
+  //   .then(data => dispatch({ type: REQUEST_LOCATION_SUCCESS, payload: data }))
+  //   .catch(error => dispatch({ type: REQUEST_LOCATION_FAILED, payload: error }))
+  // }

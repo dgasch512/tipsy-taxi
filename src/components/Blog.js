@@ -1,28 +1,47 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Story from './Story';
 import '../styles/blog.css'
 
-const Blog = ({ stories }) => {
-  const storyComponent = stories.map((user, i) => {
-    return (
-      <div className='cover'>
-        <Story 
-        key={i} 
-        id={stories[i].id} 
-        name={stories[i].name} 
-        image={stories[i].image} 
-        article={stories[i].article}
-      />  
-      </div>
+class Blog extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isActive: false,
+      stories: []
+    }
+  };
 
-    )
-  })
-    return (
-      <div>
-        { storyComponent }  
-      </div>
-    
+  componentDidMount() {
+    fetch('http://localhost:4000/blog', {
+      method: 'get',
+      headers: {'Content-Type': 'application/json'}
+    })
+      .then(response => response.json())
+      .then(stories => this.setState({ stories }));
+  }
+  render() {
+    const { stories } = this.state;
+    const storyComponent = stories.map((story, i) => {
+      return (
+        <div key={story.id} >
+          <Story 
+          id={stories[i].id} 
+          name={stories[i].name} 
+          image={stories[i].image} 
+          article={stories[i].article}
+        />  
+        </div>
+  
       )
+    })
+      return (
+        <div className='app1'>
+          { storyComponent }  
+        </div>
+      
+        )
+  }
+
 }
 
 export default Blog;

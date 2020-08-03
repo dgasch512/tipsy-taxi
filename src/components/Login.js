@@ -8,25 +8,74 @@ import '../styles/login.css';
 
 
 class Login extends Component {
-  state = {
-    username: '',
-    password: ''
+  constructor() {
+    super();
+    this.state = {
+      signInEmail: '',
+      signInPassword: '',
+      user: {
+        id: '',
+        name: '',
+        email: '',
+        ridesTot: '',
+        registered: ''
+      }
+    }
   }
 
+  loadUser = (data) => {
+    this.setState({user: {
+        id: data.id,
+        name: data.name,
+        email: data.email,
+        ridesTot: data.ridesTot,
+        registered: data.registered
+      }
+    })
+  }
+  onEmailChange = (event) => {
+    this.setState({ signInEmail: event.target.value })
+  };
 
-  handleTextChange = (e) => {
-    const state = { ...this.state }
-    state[e.target.name] = e.target.value
-    this.setState(state)
+  onPasswordChange = (event) => {
+    this.setState({ signInPassword: event.target.value })
+  };
+
+  onSubmitSignIn = () => {
+    fetch('http://localhost:4000/login', {
+      method: 'post',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        email: this.state.signInEmail,
+        password: this.state.signInPassword
+      })
+    })
+      .then(response => response.json())
+      .then(driver => {
+        if (driver.id) {
+          // event.preventDefault()
+          this.loadUser(driver)
+          this.props.profile(driver)
+          document.cookie = "loggedIn=true;max-age=1000*1000";
+          window.location.replace("/admin")
+          console.log(driver)
+          // this.props.onRouteChange('home');
+        }
+      })
   }
 
-  login = (e) => {
-    e.preventDefault()
-    document.cookie = "loggedIn=true;max-age=1000*1000";
-    window.location.replace("/driver")
-    this.props.newUser( this.state.username )
-  //  this.props.history.push("/listings")
-  }
+  // handleTextChange = (e) => {
+  //   const state = { ...this.state }
+  //   state[e.target.name] = e.target.value
+  //   this.setState(state)
+  // }
+
+  // login = (e) => {
+  //   e.preventDefault()
+  //   document.cookie = "loggedIn=true;max-age=1000*1000";
+  //   window.location.replace("/driver")
+  //   // this.props.newUser( this.state.username )
+  // }
 
   render() {
     return (
@@ -39,14 +88,12 @@ class Login extends Component {
               <p className='noRider'>If you're looking for a ride, go back!</p>             
             </div>
 
-            <form className="login-form" onSubmit={this.login}>
+            <div className="login-form">
               <div className="form-input">
               <TextField
-                marginRight=""
                 required
                 variant="filled"
-                onChange={this.handleTextChange}
-                value={this.state.username}
+                onChange={this.onEmailChange}
                 name="username"
                 label="Username"
                 type="text" />
@@ -56,8 +103,7 @@ class Login extends Component {
                   <TextField
                   required
                   variant="filled"
-                  onChange={this.handleTextChange}
-                  value={this.state.password}
+                  onChange={this.onPasswordChange}
                   name="password"
                   label="Password"
                   type="password" />
@@ -66,8 +112,10 @@ class Login extends Component {
               <Button
                 type="submit"
                 className="login-button"
-                variant="contained">Login</Button>
-            </form>
+                variant="contained"
+                onClick={this.onSubmitSignIn}
+                >Login</Button>
+            </div>
         </div>
           
         </Paper>

@@ -3,12 +3,14 @@
 }
 
 .article2 {
-  background-color: rgb(204, 201, 201);
+  background-color: rgba(182, 182, 182, 0.8);
   padding: 2.5vw;
   height: auto;
   font-family: 'Franklin Gothic Medium', Arial, sans-serif;
-  width: 75vw;
+  width: 85vw;
   border: 1px solid #222;
+  margin-top: 20px;
+  border-radius: 10px;
 }
 
 

@@ -35,13 +35,6 @@ const Dashboard = () => {
           
         </article>
       </div>
-      
-          {/* // Cards for other pages or resources */}
-      {/* <div>
-        <Card />
-        <Card />
-        <Card />
-      </div> */}
     </div>
   )
 }

@@ -4,6 +4,7 @@ import {
   REMOVE_REQUEST,
   ADD_ARTICLE,
   REMOVE_ARTICLE,
+  PROFILE,
   REQUEST_LOCATION_PENDING,
   REQUEST_LOCATION_SUCCESS,
   REQUEST_LOCATION_FAILED
@@ -11,7 +12,7 @@ import {
 
    const user = (state = [], action ) => {
     switch(action.type) {
-        case 'NEW_USER':
+        case PROFILE:
             return state = action.value;
         default:
             return state

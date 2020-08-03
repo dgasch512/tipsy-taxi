@@ -5,7 +5,7 @@ export const REMOVE_REQUEST = 'REMOVE_REQUEST';
 export const ADD_ARTICLE = 'ADD_ARTICLE';
 export const REMOVE_ARTICLE = 'REMOVE_ARTICLE';
 
-export const NEW_USER = 'NEW_USER';
+export const PROFILE = 'PROFILE';
 
 
 export const REQUEST_LOCATION_PENDING = 'REQUEST_LOCATION_PENDING';

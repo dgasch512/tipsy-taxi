@@ -31,11 +31,6 @@ class Navigation extends Component  {
                         </li>
                         {checkAuth() && (
                         <li className="nav-list-item">
-                          <Link className='links' to="/driver">DRIVER PORTAL</Link>
-                        </li> 
-                        )}
-                        {checkAuth() && (
-                        <li className="nav-list-item">
                           <Link className='links' to="/admin">ADMIN</Link>
                         </li> 
                         )}

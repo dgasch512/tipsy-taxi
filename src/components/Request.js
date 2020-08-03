@@ -7,31 +7,87 @@ class Request extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: "",
+      ride: {
       firstname: "",
       lastname: "",
       phone: "",
       pickupLocation: "",
       dropoffLocation: "",
-      comments: "",
+      comments: "" 
+      }
+
     }
   };
-
-  handleTextChange = (event) => {
-    const rider = { ...this.state };
-    rider[event.target.id] = event.target.value;
-    this.setState(rider);
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const newRider = this.state;
-    newRider.id = this.props.rides.length;
-    this.props.newRequest(newRider);
-    this.setState({ isShowing: true });
-    console.log('New Request Submitted')
+ 
+  loadRide = (data) => {
+    this.setState({ride: {
+        id: data.id,
+        firstname: data.firstname,
+        lastname: data.lastname,
+        phone: data.phone,
+        pickupLocation: data.pickupLocation,
+        dropoffLocation: data.dropoffLocation,
+        comments: data.comments,
+        rideTime: data.rideTime
+      }
+    })
   }
 
+  componentDidMount() {
+    this._isMounted = true;
+  }
+
+
+  onFirstNameChange = (event) => {
+    this.setState({ firstname: event.target.value })
+  };
+
+  onLastNameChange = (event) => {
+    this.setState({ lastname: event.target.value })
+  };
+  
+  onPhoneChange = (event) => {
+    this.setState({ phone: event.target.value })
+  };
+
+  onPLChange = (event) => {
+    this.setState({ pickupLocation: event.target.value })
+  };
+
+  onDLChange = (event) => {
+    this.setState({ dropoffLocation: event.target.value })
+  };
+
+  onCommentsChange = (event) => {
+    this.setState({ comments: event.target.value })
+  };
+
+  onSubmitRequest = () => {
+    fetch('http://localhost:4000/request', {
+      method: 'post',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        firstname: this.state.firstname,
+        lastname: this.state.lastname,
+        phone: this.state.phone,
+        pickupLocation: this.state.pickupLocation,
+        dropoffLocation: this.state.dropoffLocation,
+        comments: this.state.comments
+      })
+    })
+    .then(response => response.json())
+    .then(ride => {
+      if (ride && this._isMounted) {
+        this.loadRide(ride)
+        
+      }
+    })
+
+  };
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
 
   
   render() {
@@ -60,8 +116,7 @@ class Request extends Component {
                 type="text"
                 name="firstname"
                 id="firstname"
-                value={this.state.firstname}
-                onChange={this.handleTextChange}
+                onChange={this.onFirstNameChange}
                 required
               />
               </div>
@@ -78,8 +133,7 @@ class Request extends Component {
                 type="text"
                 name="lastname"
                 id="lastname"
-                value={this.state.lastname}
-                onChange={this.handleTextChange}
+                onChange={this.onLastNameChange}
                 required
               />
               </div>
@@ -95,8 +149,7 @@ class Request extends Component {
                 type="text"
                 name="phone"
                 id="phone"
-                value={this.state.phone}
-                onChange={this.handleTextChange}
+                onChange={this.onPhoneChange}
                 required
               />
               </div>
@@ -112,8 +165,7 @@ class Request extends Component {
                 type="text"
                 name="pickupLocation"
                 id="pickupLocation"
-                value={this.state.pickupLocation}
-                onChange={this.handleTextChange}
+                onChange={this.onPLChange}
                 required
               />
               </div>
@@ -129,8 +181,7 @@ class Request extends Component {
                 type="text"
                 name="dropoffLocation"
                 id="dropoffLocation"
-                value={this.state.dropoffLocation}
-                onChange={this.handleTextChange}
+                onChange={this.onDLChange}
                 required
               />
               </div>
@@ -146,8 +197,7 @@ class Request extends Component {
                 type="text"
                 name="comments"
                 id="comments"
-                value={this.state.comments}
-                onChange={this.handleTextChange}
+                onChange={this.onCommentsChange}
                 required
               />
               </div>
@@ -157,7 +207,7 @@ class Request extends Component {
                 className="b ph3 pv2 input-reset ba b--black grow pointer f6 dib"
                 type="submit"
                 // value="Request"
-                onClick={this.handleSubmit}
+                onClick={this.onSubmitRequest}
                 >
                   <Link className='order' to="/submitted">Submit</Link>
                 </button>

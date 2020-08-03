@@ -13,24 +13,13 @@ class Admin extends Component {
   };
 
   componentDidMount() {
-    fetch('http://localhost:4000/admin', {
+    fetch('https://salty-bayou-60550.herokuapp.com/admin', {
       method: 'get',
       headers: {'Content-Type': 'application/json'}
     })
       .then(response => response.json())
       .then(rides => this.setState({ rides }));
   }
-  
-  // buttonText = () => {
-  //   const { isActive } = this.state
-  //   const stop = 'Stop Driving'
-  //   const start = 'Start Driving' 
-  //   { isActive === true ?
-  //       <div>{stop}</div>
-  //     : 
-  //       <div>{start}</div>
-  //   }
-  // }
 
   render () {
     return (

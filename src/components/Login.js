@@ -42,7 +42,7 @@ class Login extends Component {
   };
 
   onSubmitSignIn = () => {
-    fetch('http://localhost:4000/login', {
+    fetch('https://salty-bayou-60550.herokuapp.com/login', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -59,23 +59,9 @@ class Login extends Component {
           document.cookie = "loggedIn=true;max-age=1000*1000";
           window.location.replace("/admin")
           console.log(driver)
-          // this.props.onRouteChange('home');
         }
       })
   }
-
-  // handleTextChange = (e) => {
-  //   const state = { ...this.state }
-  //   state[e.target.name] = e.target.value
-  //   this.setState(state)
-  // }
-
-  // login = (e) => {
-  //   e.preventDefault()
-  //   document.cookie = "loggedIn=true;max-age=1000*1000";
-  //   window.location.replace("/driver")
-  //   // this.props.newUser( this.state.username )
-  // }
 
   render() {
     return (

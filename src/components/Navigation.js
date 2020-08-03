@@ -14,7 +14,6 @@ class Navigation extends Component  {
     render() {
         return (
           <nav className='nav' style={{display: 'flex', justifyContent: 'space-between', position: 'relative'}}>
-            {/* <p className='f3 link dim black underline pa3 pointer'>Sign Out</p> */}
             <div className='icon'>
              <h4 style={{ flexGrow: "1" }}>TIPSY<span className='taxi'>TAXI</span></h4> 
             </div>

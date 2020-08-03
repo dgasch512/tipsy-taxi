@@ -27,7 +27,7 @@
 .thish2 {
   color: white;
   font-family: 'Franklin Gothic Medium', Arial, sans-serif;
-  font-size: 18vh;
+  font-size: 10vw;
   margin: 0 0 2vw 0;
   text-align: left;
 }
@@ -47,7 +47,7 @@
   align-items: center;
   justify-content: flex-end;
   justify-self: flex-end;
-  width: 100%;  
+  width: 100%; 
 }
 
 .callText {
@@ -60,7 +60,8 @@
   display: flex;
   align-items: center;
   padding: 0 10px;
-  width: 24vw;
+  width: 30vw;
+  min-width: 60px;
   height: 100%;
   display: flex;
   align-self: flex-end;
@@ -77,6 +78,7 @@
 .button-text {
   font-family: 'Franklin Gothic Medium', Arial, sans-serif;
   font-size: 4vh;
+  font-weight: 600;
   color: white;
   text-decoration: none;
 }

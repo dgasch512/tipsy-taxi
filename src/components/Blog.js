@@ -17,8 +17,11 @@ class Blog extends Component {
       headers: {'Content-Type': 'application/json'}
     })
       .then(response => response.json())
-      .then(stories => this.setState({ stories }));
-  }
+      .then(console.log('here'))
+      .then(data => this.setState({ data }));
+ }
+   
+  
   render() {
     const { stories } = this.state;
     const storyComponent = stories.map((story, i) => {

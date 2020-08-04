@@ -20,7 +20,7 @@ class Navigation extends Component  {
             <div>
             <ul className="nav-list">
                         <li className="nav-list-item">
-                          <Link className='links' to="/">HOME</Link>
+                          <Link className='links' to="/dashboard">HOME</Link>
                         </li>
                         <li className="nav-list-item">
                           <Link className='links' to="/about">ABOUT</Link>
@@ -38,7 +38,7 @@ class Navigation extends Component  {
                             <li className="nav-list-item links"
                               onClick={() => {
                               document.cookie = "loggedIn="
-                              window.location.replace("/")
+                              window.location.replace("/dashboard")
                               this.props.logOut()
                             }}>
                             LOGOUT

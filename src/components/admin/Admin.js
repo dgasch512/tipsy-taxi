@@ -1,6 +1,7 @@
 import React, {Component } from 'react';
 import Driver from './Driver';
 import '../../styles/admin.css';
+import { Link } from 'react-router-dom';
 
 
 class Admin extends Component {
@@ -33,8 +34,13 @@ class Admin extends Component {
             <p className='rideTot'>You've given 20 rides! This week: 2</p>
             <div className='buttons' >
               <button className='adminButton isActive'>STOP DRIVING</button> 
-              <button className='adminButton manageBlog'>MANAGE BLOG</button>  
-              <button className='adminButton registerButton'>REGISTER ADMIN</button>  
+              <button 
+                className='adminButton manageBlog'
+                type='submit'>
+                <Link className='order' to="/artpost">MANAGE BLOG</Link>
+                </button>  
+              <button className='adminButton registerButton'>REGISTER ADMIN
+              </button>  
             </div>
                     
           </div>

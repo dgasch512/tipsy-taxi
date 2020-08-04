@@ -8,6 +8,8 @@ import Blog from './components/Blog';
 import Login from './containers/login';
 import Admin from './components/admin/Admin';
 import Ordered from './components/Ordered';
+import Artpost from './components/admin/Artpost';
+import Register from './components/admin/Register';
 
 
 
@@ -31,6 +33,8 @@ const Router = () => {
       <ProtectedRoute exact path="/admin" component={Admin} />
       <Route path="/about" component={About} />
       <Route path="/blog" component={Blog} />
+      <Route path="/artpost" component={Artpost} />
+      <Route path="/register" component={Register} />
       <Route path="/submitted" component={Ordered} />
     </Switch>
   );

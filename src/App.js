@@ -7,7 +7,7 @@ import store from './redux/store';
 import Particles from 'react-particles-js';
 import { particlesOptions } from './components/random/Particles';
 import './App.css';
-import Scroll from './components/random/Scroll';
+// import Scroll from './components/random/Scroll';
 
 
 function App() {
@@ -16,9 +16,9 @@ function App() {
       <BrowserRouter>
         <Particles className='particles' params={particlesOptions} />
         <Navigation />
-        <Scroll>
+        {/* <Scroll> */}
           <Router />  
-        </Scroll>
+        {/* </Scroll> */}
         
       </BrowserRouter>
     </Provider>

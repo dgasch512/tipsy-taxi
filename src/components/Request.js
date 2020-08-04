@@ -63,7 +63,7 @@ class Request extends Component {
   };
 
   onSubmitRequest = () => {
-    fetch('https://salty-bayou-60550.herokuapp.com/request', {
+    fetch('/request', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

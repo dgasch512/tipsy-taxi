@@ -42,7 +42,7 @@ class Login extends Component {
   };
 
   onSubmitSignIn = () => {
-    fetch('https://salty-bayou-60550.herokuapp.com/login', {
+    fetch('/login', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

@@ -14,7 +14,7 @@ class Admin extends Component {
   };
 
   componentDidMount() {
-    fetch('https://salty-bayou-60550.herokuapp.com/admin', {
+    fetch('/admin', {
       method: 'get',
       headers: {'Content-Type': 'application/json'}
     })

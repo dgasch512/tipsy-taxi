@@ -44,7 +44,7 @@ class Artpost extends Component {
 
 
   onSubmitRequest = () => {
-    fetch('https://salty-bayou-60550.herokuapp.com/artpost', {
+    fetch('/artpost', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

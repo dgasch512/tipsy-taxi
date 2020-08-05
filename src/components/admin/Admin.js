@@ -14,7 +14,7 @@ class Admin extends Component {
   };
 
   componentDidMount() {
-    fetch('/admin', {
+    fetch('http://localhost:4000/admin', {
       method: 'get',
       headers: {'Content-Type': 'application/json'}
     })

@@ -42,7 +42,7 @@ class Login extends Component {
   };
 
   onSubmitSignIn = () => {
-    fetch('/login', {
+    fetch('http://localhost:4000/login', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

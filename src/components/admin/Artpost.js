@@ -44,7 +44,7 @@ class Artpost extends Component {
 
 
   onSubmitRequest = () => {
-    fetch('/artpost', {
+    fetch('http://localhost:4000/artpost', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

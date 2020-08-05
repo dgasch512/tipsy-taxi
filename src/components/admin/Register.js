@@ -44,7 +44,7 @@ class Register extends Component {
 
 
   onSubmitRequest = () => {
-    fetch('/register', {
+    fetch('http://localhost:4000/register', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

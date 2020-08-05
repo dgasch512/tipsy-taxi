@@ -12,7 +12,7 @@ class Blog extends Component {
   };
 
   componentDidMount() {
-    fetch('/blog', {
+    fetch('http://localhost:4000/blog', {
       method: 'get',
       headers: {'Content-Type': 'application/json'}
     })

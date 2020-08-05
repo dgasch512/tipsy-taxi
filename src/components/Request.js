@@ -63,7 +63,7 @@ class Request extends Component {
   };
 
   onSubmitRequest = () => {
-    fetch('/request', {
+    fetch('http://localhost:3000/request', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

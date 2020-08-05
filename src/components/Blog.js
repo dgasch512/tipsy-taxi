@@ -12,7 +12,7 @@ class Blog extends Component {
   };
 
   componentDidMount() {
-    fetch('http://localhost:4000/blog', {
+    fetch('http://https://tipsy-taxi.herokuapp.com/blog', {
       method: 'get',
       headers: {'Content-Type': 'application/json'}
     })

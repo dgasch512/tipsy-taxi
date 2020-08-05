@@ -14,7 +14,7 @@ class Admin extends Component {
   };
 
   componentDidMount() {
-    fetch('http://localhost:4000/admin', {
+    fetch('http://https://tipsy-taxi.herokuapp.com/admin', {
       method: 'get',
       headers: {'Content-Type': 'application/json'}
     })

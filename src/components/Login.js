@@ -42,7 +42,7 @@ class Login extends Component {
   };
 
   onSubmitSignIn = () => {
-    fetch('http://https://tipsy-taxi.herokuapp.com/login', {
+    fetch('https://tipsy-taxi.herokuapp.com/login', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

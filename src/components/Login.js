@@ -58,7 +58,7 @@ class Login extends Component {
           this.loadUser(driver)
           this.props.profile(driver)
           document.cookie = "loggedIn=true;max-age=1000*1000";
-          // window.location.replace("/admin")
+          window.location.replace("/admin")
           console.log(driver)
         }
       })

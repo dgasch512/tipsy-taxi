@@ -40,7 +40,7 @@ class Admin extends Component {
                 type='submit'>
                 <Link className='order' to="/artpost">MANAGE BLOG</Link>
                 </button>  
-              <button className='adminButton registerButton'>REGISTER ADMIN
+              <button className='adminButton registerButton'><Link className='order' to="/register">REGISTER DRIVER</Link>
               </button>  
             </div>
                     

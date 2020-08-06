@@ -14,35 +14,22 @@ class Blog extends Component {
   componentDidMount() {
     fetch('https://tipsy-taxi.herokuapp.com/blog', {
       method: 'get',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}
+      headers: {'Content-Type': 'application/json'}
     })
       .then(response => response.json())
+      .then(stories => this.setState({ stories }))
       .then(console.log('here'))
-      .then(data => this.setState({ data }))
       .catch(err => console.log(err));
  }
    
   
   render() {
     const { stories } = this.state;
-    const storyComponent = stories.map((story, i) => {
+
       return (
-        <div key={story.id} >
-          <Story 
-          id={stories[i].id} 
-          name={stories[i].name} 
-          image={stories[i].image} 
-          article={stories[i].article}
-        />  
+        <div >
+          <Story stories={ stories }/>  
         </div>
-  
-      )
-    })
-      return (
-        <div className='app1'>
-          { storyComponent }  
-        </div>
-      
         )
   }
 

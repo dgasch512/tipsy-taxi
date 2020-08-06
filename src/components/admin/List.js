@@ -22,10 +22,7 @@ const List = ({ id, firstname, lastname, phone, pickuplocation, dropofflocation,
             <div className='commentText'>{comments}</div>
           </div>
         </div>
-      </div> 
-
-     
-      
+      </div>
     </div>
   )
 };

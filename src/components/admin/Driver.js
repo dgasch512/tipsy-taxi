@@ -9,13 +9,13 @@ const Driver = ({ rides }) => {
       <div key={rider.id} className='cover2'>
         <div>
           <List 
-          id={rider[i].id} 
-          firstname={rider[i].firstname} 
-          lastname={rider[i].lastname} 
-          phone={rider[i].phone} 
-          pickuplocation={rider[i].pickuplocation}
-          dropofflocation={rider[i].dropofflocation}
-          comments={rider[i].comments}
+          id={rider.id} 
+          firstname={rider.firstname} 
+          lastname={rider.lastname} 
+          phone={rider.phone} 
+          pickuplocation={rider.pickuplocation}
+          dropofflocation={rider.dropofflocation}
+          comments={rider.comments}
           />
         </div>
       </div>

@@ -1,7 +1,8 @@
 .outside {
-  margin: 0;
+  margin: 0; 
   padding: 10px;
-  height: 100vh;
+  height: 100%;
+  z-index: -1;
 }
 
 .article3 {

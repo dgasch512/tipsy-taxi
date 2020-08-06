@@ -79,6 +79,7 @@ class Request extends Component {
     .then(ride => {
       if (ride && this._isMounted) {
         this.loadRide(ride)  
+        .catch(err => console.log(err))
       }
     })
     .catch(err => console.log(err));

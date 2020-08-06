@@ -59,7 +59,7 @@ class Artpost extends Component {
         this.loadPost(post1)        
       }
     })
-
+    .catch(err => console.log(err));
   };
 
   componentWillUnmount() {

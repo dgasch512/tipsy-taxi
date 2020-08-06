@@ -19,7 +19,8 @@ class Admin extends Component {
       headers: {'Content-Type': 'application/json'}
     })
       .then(response => response.json())
-      .then(rides => this.setState({ rides }));
+      .then(rides => this.setState({ rides }))
+      .catch(err => console.log(err));
   }
 
   render () {

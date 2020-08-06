@@ -18,7 +18,8 @@ class Blog extends Component {
     })
       .then(response => response.json())
       .then(console.log('here'))
-      .then(data => this.setState({ data }));
+      .then(data => this.setState({ data }))
+      .catch(err => console.log(err));
  }
    
   

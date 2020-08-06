@@ -59,7 +59,7 @@ class Register extends Component {
         this.loadDriver(driver)        
       }
     })
-
+    .catch(err => console.log(err));
   };
 
   componentWillUnmount() {

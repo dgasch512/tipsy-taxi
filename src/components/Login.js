@@ -62,6 +62,7 @@ class Login extends Component {
           console.log(driver)
         }
       })
+      .catch(err => console.log(err));
   }
 
   render() {

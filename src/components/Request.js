@@ -78,11 +78,10 @@ class Request extends Component {
     .then(response => response.json())
     .then(ride => {
       if (ride && this._isMounted) {
-        this.loadRide(ride)
-        
+        this.loadRide(ride)  
       }
     })
-
+    .catch(err => console.log(err));
   };
 
   componentWillUnmount() {

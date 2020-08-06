@@ -14,7 +14,7 @@ class Blog extends Component {
   componentDidMount() {
     fetch('https://tipsy-taxi.herokuapp.com/blog', {
       method: 'get',
-      headers: {'Content-Type': 'application/json'}
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}
     })
       .then(response => response.json())
       .then(console.log('here'))
